@@ -1,0 +1,170 @@
+//====================================================================================================
+.anime{
+	padding-top: toRem(100);
+    padding-bottom: toRem(30);
+	&__container{
+  
+	}
+	&__body{
+		padding: toRem(20);
+		border-radius: toRem(16);
+		background-color: var(--secondary);
+		display: flex;
+		flex-direction: column;
+		gap: toRem(20);
+        .input-box{
+            max-width: toRem(400);
+        }
+	}
+	&__items{
+		display: grid;
+		align-items: start;
+		grid-template-columns: repeat(auto-fill,minmax(130px, 1fr));
+
+		gap: toRem(20);
+		justify-content: center;
+		@media (min-width:$mobile){
+			grid-template-columns: repeat(auto-fill,minmax(230px, 1fr));
+			  
+		}
+	}
+}
+  
+.item-anime{
+	cursor: pointer;
+	justify-self: center;
+	width: 100%;
+	height: fit-content;
+	max-width: toRem(230);
+	display: grid;
+	transition: all .3s ease;
+	background-color: var(--primary);
+	border-radius: toRem(16);
+	overflow: hidden;
+	@media (any-hover: hover){
+		&:hover{
+			.item-anime__name{
+				color: var(--blue);
+			}
+			.item-anime__image{
+				transform: scale(1.03);
+			}
+            .item-anime__rating{
+				opacity: 0;
+			}
+		}
+	}
+	&__image{
+		position: relative;
+		height: 100%;
+		width: 100%;
+		max-height: toRem(300);
+		transition: all .3s ease;
+		// aspect-ratio: 1 / 2;
+		img{
+			aspect-ratio: 250 / 350;
+		}
+	}
+    &__rating{
+        position: absolute;
+        width: fit-content;
+        height: fit-content;
+        top: 5%;
+        left: 0;
+        font-size: toRem(16);
+        padding: toRem(10) toRem(20);
+        font-weight: 500;
+        border-radius: 0 toRem(10) toRem(10) 0;
+        background-color: var(--blue-hover);
+        transition: all .5s ease;
+        pointer-events: none;
+    }
+	&__body{
+		padding: toRem(20);
+	}
+	&__name{
+		text-align: center;
+		font-size: toRem(18);
+		font-weight: 500;
+		transition: all .3s ease;
+        @include adaptiveValue("font-size", 18, 16);
+		// white-space: nowrap;
+		// overflow: hidden;
+		// text-overflow: ellipsis;
+	}
+}
+//====================================================================================================
+
+// LOGIN
+
+.login {
+    padding-top: toRem(100);
+    padding-bottom: toRem(30);
+    // .login__container
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    // .login__body
+    &__body {
+        background-color: var(--secondary);
+        padding: toRem(20);
+        border-radius: toRem(20);
+        display: flex;
+        flex-direction: column;
+        gap: toRem(30);
+        width: 100%;
+        max-width: toRem(600);
+
+    }
+    // .login__title
+    &__title {
+    }
+    // .login__form
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: toRem(20);
+    }
+    // .login__input
+    &__input {
+    }
+    // .login__button
+    &__button {
+        
+        margin: 0 auto;
+        margin-top: toRem(10);
+    }
+    // .login__block
+    &__block {
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: toRem(10);
+        text-wrap: nowrap;
+        font-size: toRem(14);
+        a{
+            color: var(--blue);
+            text-decoration: underline;
+        }
+    }
+}
+
+//====================================================================================================
+
+// ABOUT
+.about-us{
+	padding-top: toRem(100);
+    padding-bottom: toRem(30);
+    &__container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: toRem(50);
+    }
+    &__title{
+        margin: 0 auto;
+        
+    }
+  }

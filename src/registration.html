@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+	"title":"HomePage"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page">
+				<div class="login">
+                    <div class="login__container">
+                        <div class="login__body">
+                            <h2 class="login__title title">Registration</h2>
+                            <form class="login__form">
+                                <div class="input-box">
+                                    <p>Username</p>
+                                    <input type="text" placeholder='Username' class="login__input input">
+                                </div>
+                                <div class="input-box">
+                                    <p>Name</p>
+                                    <input type="text" placeholder='Name' class="login__input input">
+                                </div>
+                                <div class="input-box">
+                                    <p>Email</p>
+                                    <input type="email" placeholder='Email' class="login__input input">
+                                </div>
+                                <div class="input-box">
+                                    <p>Password</p>
+                                    <input type="password" placeholder='Password' class="login__input input">
+                                </div>
+                                <div class="input-box">
+                                    <p>Repeat the password</p>
+                                    <input type="password" placeholder='Repeat the password' class="login__input input">
+                                </div>
+                                <button class="login__button button">Register</button>
+                            </form>
+                            <div class="login__block">
+                                <p>Already have an account?</p>
+                                
+                                <a href="login.html">Log in</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_js.htm',{})
+	</body>
+</html>

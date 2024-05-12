@@ -1,0 +1,45 @@
+// Заголовки, загальні БЕМ блоки та інше...
+
+.input-box{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: toRem(10);
+    input{
+        padding-right: toRem(40);
+        height: toRem(40);
+
+    }
+    
+    input:focus + svg *{
+        stroke: var(--blue) !important;
+    }
+
+    input:focus + svg{
+        transform: translate(0, -50%) rotate(360deg) scale(1.1);
+
+    }
+    
+    svg{
+        position: absolute;
+        top: 50%;
+        right: toRem(10);
+        transform: translate(0, -50%);
+        width: toRem(20);
+        height: toRem(20);
+        transition: all .3s ease;
+
+        *{
+            transition: all .3s ease;
+        }
+    }
+    
+}
+
+.title{
+    @include adaptiveValue("font-size", 35, 24);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--blue);
+}
