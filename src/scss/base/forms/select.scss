@@ -1,20 +1,32 @@
 // <SELECT>
 // Сніппет (HTML): sel
 .select {
-	min-width: 0;
+	min-width: toRem(84);
 	position: relative;
+	&__placeholder{
+		color: #B0BFD7;
+	}
 	// .select__body
 	&__body {
 		position: relative;
+		border-radius: toRem(5);
+		width: 100%;
+		display: block;
+		height: toRem(45);
+		font-size: toRem(14);
+		background-color: var(--primary);
+		outline: 1px solid #B0BFD7;
+		
 	}
 	// .select__title
 	&__title {
 		color: inherit;
 		text-align: left;
-		border: 1px solid #d9d9d9;
-		background-color: #fff;
+		// border: 1px solid #d9d9d9;
+		// background-color: #fff;
 		cursor: pointer;
 		width: 100%;
+		height: 100%;
 		border-radius: 4px;
 	}
 	// .select__value
@@ -22,24 +34,39 @@
 		display: flex;
 		min-width: 0;
 		align-items: center;
-		height: toRem(30);
-		padding: 0 toRem(15);
+	
+		padding: toRem(14);
+		padding-right: toRem(25);
 		gap: toRem(10);
 		> * {
 			flex: 1 1 auto;
 		}
-		&:after {
+		&::before,
+		&::after {
 			content: "";
-			align-self: stretch;
-			flex: 0 0 10px;
-			transition: all 0.3s ease 0s;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			._select-open & {
-				transform: rotate(-180deg);
+			position: absolute;
+			right: 10px;
+			top: 50%;
+			background-color: #ffffff;
+			height: 1.5px;
+			width: 6px;
+			transition: transform 0.5s ease 0s;
+		}
+		&::before {
+			transform: translate(-75%, -50%) rotate(40deg);
+		}
+		&::after {
+			transform: translate(0, -50%) rotate(-40deg);
+		}
+		._select-open &{
+			&::before {
+				transform: translateX(-75%) rotate(-40deg);
+			}
+			&::after {
+				transform: rotate(40deg);
 			}
 		}
+	
 		&._select-pseudo-label {
 			&::before {
 				content: attr(data-pseudo-label);
@@ -68,17 +95,18 @@
 	}
 	// .select__options
 	&__options {
-		color: #000;
+		color: #ffffff;
 		position: absolute;
-		top: calc(100% - toRem(1));
+		top: calc(100% - 1px);
 		border-radius: 0 0 4px 4px;
 		min-width: 100%;
 		left: 0;
-		background-color: #fff;
 		border-top: 0;
-		border: 1px solid #d9d9d9;
+		outline: 1px solid #B0BFD7;
+		background-color: var(--primary);
 		border-top: 0;
 		padding: 10px 0px 5px 0px;
+		z-index: -1;
 	}
 	// .select__scroll
 	&__scroll {
@@ -96,16 +124,20 @@
 	// .select__option
 	&__option {
 		width: 100%;
+		height: toRem(39);
 		text-align: left;
 		cursor: pointer;
 		padding: 5px 15px;
 		color: inherit;
+		&:not(:last-child) {
+			border-bottom: 1px solid #B0BFD7;
+		}
 		&._select-selected {
-			background-color: #eee;
+			background-color: var(--primary);
 		}
 		@media (any-hover: hover) {
 			&:hover {
-				background: #d9d9d9;
+				background: #333333;
 			}
 		}
 	}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+	"title":"HomePage"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page-user-page">
+				<section class="user-page">
+					<div class="user-page__container">
+						<div class="user-page__body body-user-page">
+							<div class="body-user-page__top">
+								<div class="body-user-page__image-wrapper">
+									<label class="body-user-page__image">
+										<img src="@img/anime/01.jpg" alt="Image">
+										<input autocomplete="off" id="user-page-image" type="file" class="user-page__image-input">
+									</label>
+									<label for="user-page-image" class="button">Change photo</label>
+								</div>
+								
+							</div>
+							<div class="body-user-page__content">
+								<div class="body-user-page__block">
+
+									<div class="input-box">
+										<p>Nickname</p>
+										<input type="text" placeholder='Nickname' class="input">
+									</div>
+									<div class="input-box">
+										<p>Name</p>
+										<input type="text" placeholder='Name' class="input">
+									</div>
+								</div>
+								<div class="body-user-page__block">
+									<div class="input-box">
+										<p>Location</p>
+										<input type="text" placeholder='Location' class="input">
+									</div>
+									<div class="input-box">
+										<p>Sex</p>
+										<input type="text" placeholder='Sex' class="input">
+									</div>
+								</div>
+								<div class="input-box">
+									<p>About me</p>
+									<textarea placeholder='About me' class="input"></textarea>
+								</div>
+								<div class="body-user-page__block">
+									<div class="input-box">
+										<p>Website</p>
+										<input type="text" placeholder='Website' class="input">
+									</div>
+									
+								</div>
+								
+								
+
+							</div>
+							
+						</div>
+						
+						
+					</div>
+				</section>
+				<section class="user-anime">
+					<div class="user-anime__container">
+						<div class="user-anime__body">
+							<ul class="user-anime-list">
+								<div class="user-anime-list__block">
+									<div class="user-anime-list__name">Anime</div>
+									<div class="user-anime-list__rate">Rating</div>
+									<div class="user-anime-list__genre">Genre</div>
+								</div>
+								<li class="user-anime-list__item">
+									<div class="user-anime-list__name">asdasdasd</div>
+									<div class="user-anime-list__rate">9</div>
+									<div class="user-anime-list__genre">asdasd</div>
+								</li>
+								<li class="user-anime-list__item">
+									<div class="user-anime-list__name">asdasdasd</div>
+									<div class="user-anime-list__rate">9</div>
+									<div class="user-anime-list__genre">asdasd</div>
+								</li>
+								<li class="user-anime-list__item">
+									<div class="user-anime-list__name">asdasdasd</div>
+									<div class="user-anime-list__rate">9</div>
+									<div class="user-anime-list__genre">asdasd</div>
+								</li>
+								<li class="user-anime-list__item">
+									<div class="user-anime-list__name">asdasdasd</div>
+									<div class="user-anime-list__rate">9</div>
+									<div class="user-anime-list__genre">asdasd</div>
+								</li>
+								<li class="user-anime-list__item">
+									<div class="user-anime-list__name">asdasdasd</div>
+									<div class="user-anime-list__rate">9</div>
+									<div class="user-anime-list__genre">asdasd</div>
+								</li>
+							</ul>
+						</div>
+						<a href="#" data-popup="#popup-grade" class="grade button">Grade</a>
+					</div>
+				</section>
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>

@@ -1,10 +1,35 @@
-<div id="popup" aria-hidden="true" class="popup">
+<div id="popup-grade" aria-hidden="true" class="popup-grade popup">
 	<div class="popup__wrapper">
 		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрити</button>
-			<div class="popup__text">
-				Text
+			<div class="popup-grade__body">
+				<div class="popup-grade__top">
+					<button data-close type="button" class="popup__close">Close</button>
+				</div>
+				<div class="popup-grade__content">
+					<div class="popup-grade__block">
+
+						<div class="input-box">
+							<p>Anime</p>
+							<input type="text" placeholder='Anime' class="input">
+						</div>
+	
+						<select name="form[]" data-scroll="130" data-class-modif="form">
+							<option value="" data-class="select__placeholder" selected></option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+						
+						</select>
+					</div>
+
+
+					<button class="button">Add</button>
+				</div>
 			</div>
+			
 		</div>
 	</div>
 </div>

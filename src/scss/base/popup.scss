@@ -9,7 +9,7 @@ body::after {
 	opacity: 0;
 	transition: opacity 0.8s ease 0s;
 	pointer-events: none;
-	z-index: 149;
+	z-index: 999;
 }
 .popup-show body::after {
 	opacity: 1;
@@ -26,7 +26,7 @@ body::after {
 	pointer-events: none;
 }
 .popup_show {
-	z-index: 150;
+	z-index: 9999;
 	visibility: visible;
 	overflow: auto;
 	pointer-events: auto;
@@ -50,7 +50,7 @@ body::after {
 	visibility: hidden;
 	transform: scale(0);
 	transition: transform 0.3s ease 0s;
-	background-color: #eee;
+	background-color: var(--secondary);
 	padding: 20px;
 	width: 100%;
 	max-width: 900px;
@@ -59,3 +59,37 @@ body::after {
 		visibility: visible;
 	}
 }
+
+
+
+
+.popup-grade {
+	// .popup-grade__body
+	&__body {
+		display: flex;
+		flex-direction: column;
+		gap: toRem(30);
+	}
+	// .popup-grade__top
+	&__top {
+		display: flex;
+		justify-content: end;
+	}
+	// .popup-grade__content
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: toRem(20);
+		justify-content: space-between;
+		min-height: toRem(300);
+		.button{
+			margin: 0 auto;
+		}
+	}
+	.popup-grade__block{
+		display: flex;
+		flex-direction: column;
+		gap: toRem(20);
+	}
+}
+

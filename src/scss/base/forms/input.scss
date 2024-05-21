@@ -8,6 +8,10 @@ textarea {
 	-moz-appearance: none;
 	appearance: none;
 }
+textarea {
+	resize: none;
+	// padding: 0px 0px;
+}
 .input {
 	border-radius: 6px;
 	width: 100%;
@@ -35,7 +39,4 @@ textarea {
 	}
 }
 
-textarea.input {
-	resize: none;
-	padding: 0px 0px;
-}
+

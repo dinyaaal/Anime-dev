@@ -168,3 +168,169 @@
         
     }
   }
+
+
+
+//====================================================================================================
+.page-user-page{
+
+}
+.user-page {
+	padding-top: toRem(120);
+
+	padding-bottom: toRem(30);
+		// .user-page__container
+		&__container {
+			width: 100%;
+		}
+		// .user-page__body
+		&__body {
+		}
+		
+}
+.body-user-page {
+	width: 100%;
+	background-color: var(--secondary);
+	padding: toRem(20);
+	border-radius: toRem(20);
+	display: flex;
+	gap: toRem(30);
+	flex-direction: column;
+		// .body-user-page__top
+		&__top {
+			display: flex;
+			gap: toRem(20);
+			align-items: end;
+		}
+		// .body-user-page__image-wrapper
+		&__image-wrapper {
+			margin: 0 auto;
+			display: flex;
+			flex-direction: column;
+			gap: toRem(20);
+			.user-page__image-input{
+				position: absolute;
+				width: 0;
+				height: 0;
+				opacity: 0;
+			}
+		}
+		// .body-user-page__image
+		&__image {
+			max-width: toRem(320);
+			aspect-ratio: 1 / 1;
+			width: 100%;
+			border-radius: toRem(10);
+			overflow: hidden;
+			img{
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+		// .body-user-page__block
+		&__block {
+			display: flex;
+			justify-content: space-between;
+			gap: toRem(20);
+		}
+		// .body-user-page__content
+		&__content {
+			display: flex;
+			flex-direction: column;
+			gap: toRem(20);
+			textarea{
+				@media (min-width:$mobile){
+					max-width: calc(50% - 10px);
+				}
+				height: toRem(220);
+			}
+		}
+}
+
+.body-user-page {
+	// .body-user-page__list
+	&__list {
+	}
+}
+
+
+
+
+
+.user-anime {
+	padding-top: toRem(40);
+	padding-bottom: toRem(30);
+	// .user-anime__container
+	&__container {
+		display: flex;
+		flex-direction: column;
+		gap: toRem(30);
+		align-items: center;
+	}
+	// .user-anime__body
+	&__body {
+		width: 100%;
+	background-color: var(--secondary);
+	padding: toRem(20);
+	border-radius: toRem(20);
+	display: flex;
+	gap: toRem(30);
+	flex-direction: column;	
+	}
+}
+
+
+
+
+
+
+
+.user-anime-list {
+	
+	display: flex;
+	flex-direction: column;
+	
+	gap: toRem(20);
+	&__block{
+		display: grid;
+		grid-template-columns: repeat(3,1fr);
+		justify-items: center;
+		align-items: center;
+		gap: toRem(20);
+		justify-content: space-between;
+
+	}
+	// .user-anime-list__item
+	&__item {
+		display: grid;
+	justify-items: center;
+
+		grid-template-columns: repeat(3,1fr);
+		gap: toRem(20);
+		padding: toRem(20) 0;
+	}
+	// .user-anime-list__name
+	&__name {
+	}
+	// .user-anime-list__rate
+	&__rate {
+	}
+	// .user-anime-list__genre
+	&__genre {
+	}
+}
+
+
+
+
+//====================================================================================================
+
+
+//====================================================================================================
+
+//====================================================================================================
+
+//====================================================================================================
+
+//====================================================================================================
