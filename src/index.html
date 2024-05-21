@@ -14,79 +14,68 @@
 								<input type="text" placeholder='Search anime' class="anime__search input">
 								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
 							</div>
-							<div class="anime__items">
-								<a href='#' class="item-anime">
-									<div class="item-anime__image">
-									  <img class='ibg' src="@img/anime/01.jpg" alt="Image" />
-									  <div class="item-anime__rating"><span>10.0</span></div>
+							<div class="anime__block">
+								<aside class="anime__filters filters">
+									<div data-spollers class="filters__items">
+										<details class="filters__item anime-filter">
+											<summary class="anime-filter__text">Genre</summary>
+											<div class="anime-filter__items filter-items">
+												<div class="filter-items__item item-filter">
+													<label class="item-filter__type">
+														<p>
+															Adventure
+														</p>
+														<input type="checkbox" name="adventure" id="adventure" class="real-checkbox">
+														<span class="custom-checkbox"></span>
+													</label>
+												</div>
+												<div class="filter-items__item item-filter">
+													<label class="item-filter__type">
+														<p>
+															Romance
+														</p>
+														<input type="checkbox" name="romance" id="romance" class="real-checkbox">
+														<span class="custom-checkbox"></span>
+													</label>
+												</div>
+												<div class="filter-items__item item-filter">
+													<label class="item-filter__type">
+														<p>
+															Shoter
+														</p>
+														<input type="checkbox" name="shoter" id="shoter" class="real-checkbox">
+														<span class="custom-checkbox"></span>
+													</label>
+												</div>
+											</div>
+										</details>
+										
 									</div>
-									<div class="item-anime__body">
-									  <p class='item-anime__name'>Friren</p>
-									</div>
-								</a>
-								<a href='#' class="item-anime">
-									<div class="item-anime__image">
-									  <img class='ibg' src="@img/anime/02.jpeg" alt="Image" />
-									  <div class="item-anime__rating"><span>9.25</span></div>
-									</div>
-									<div class="item-anime__body">
-									  <p class='item-anime__name'>Bocchi the Rock!</p>
-									</div>
-								</a>
-								<a href='#' class="item-anime">
-									<div class="item-anime__image">
-									  <img class='ibg' src="@img/anime/01.jpg" alt="Image" />
-									  <div class="item-anime__rating"><span>10.0</span></div>
-									</div>
-									<div class="item-anime__body">
-									  <p class='item-anime__name'>Friren</p>
-									</div>
-								</a>
-								<a href='#' class="item-anime">
-									<div class="item-anime__image">
-									  <img class='ibg' src="@img/anime/02.jpeg" alt="Image" />
-									  <div class="item-anime__rating"><span>9.25</span></div>
-									</div>
-									<div class="item-anime__body">
-									  <p class='item-anime__name'>Bocchi the Rock!</p>
-									</div>
-								</a>
-								<a href='#' class="item-anime">
-									<div class="item-anime__image">
-									  <img class='ibg' src="@img/anime/01.jpg" alt="Image" />
-									  <div class="item-anime__rating"><span>10.0</span></div>
-									</div>
-									<div class="item-anime__body">
-									  <p class='item-anime__name'>Friren</p>
-									</div>
-								</a>
-								<a href='#' class="item-anime">
-									<div class="item-anime__image">
-									  <img class='ibg' src="@img/anime/02.jpeg" alt="Image" />
-									  <div class="item-anime__rating"><span>9.25</span></div>
-									</div>
-									<div class="item-anime__body">
-									  <p class='item-anime__name'>Bocchi the Rock!</p>
-									</div>
-								</a>
-								<a href='#' class="item-anime">
-									<div class="item-anime__image">
-									  <img class='ibg' src="@img/anime/01.jpg" alt="Image" />
-									  <div class="item-anime__rating"><span>10.0</span></div>
-									</div>
-									<div class="item-anime__body">
-									  <p class='item-anime__name'>Friren</p>
-									</div>
-								</a>
-								<a href='#' class="item-anime">
-									<div class="item-anime__image">
-									  <img class='ibg' src="@img/anime/02.jpeg" alt="Image" />
-									  <div class="item-anime__rating"><span>9.25</span></div>
-									</div>
-									<div class="item-anime__body">
-									  <p class='item-anime__name'>Bocchi the Rock!</p>
-									</div>
-								</a>
+								</aside>
+								<div class="anime__items">
+									<a href='#' class="item-anime">
+										<div class="item-anime__image">
+										  <img class='ibg' src="@img/anime/01.jpg" alt="Image" />
+										  <div class="item-anime__rating"><span>10.0</span></div>
+										</div>
+										<div class="item-anime__body">
+										  <p class='item-anime__name'>Friren</p>
+										  <div class="item-anime__genre">Romantic</div>
+										</div>
+									</a>
+									<a href='#' class="item-anime">
+										<div class="item-anime__image">
+										  <img class='ibg' src="@img/anime/02.jpeg" alt="Image" />
+										  <div class="item-anime__rating"><span>9.25</span></div>
+										</div>
+										<div class="item-anime__body">
+										  <p class='item-anime__name'>Bocchi the Rock!</p>
+										  <div class="item-anime__genre">Romantic</div>
+
+										</div>
+									</a>
+									
+								</div>
 							</div>
 						</div>
 					</div>
