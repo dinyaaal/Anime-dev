@@ -255,7 +255,7 @@
 		&__content {
 			display: flex;
 			flex-direction: column;
-			gap: toRem(20);
+			gap: toRem(60);
 			textarea{
 				@media (min-width:$mobile){
 					max-width: calc(50% - 10px);
@@ -263,13 +263,23 @@
 				height: toRem(220);
 			}
 		}
+		&__block{
+			display: flex;
+			flex-direction: column;
+			gap: toRem(50);
+		}
+		&__actions{
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			gap: toRem(20);
+		}
+		&__delete{
+			background-color: rgb(79, 79, 79);
+		}
 }
 
-.body-user-page {
-	// .body-user-page__list
-	&__list {
-	}
-}
+
 
 
 
@@ -292,6 +302,7 @@
 	padding: toRem(20);
 	border-radius: toRem(20);
 	display: flex;
+	
 	gap: toRem(30);
 	flex-direction: column;	
 	}

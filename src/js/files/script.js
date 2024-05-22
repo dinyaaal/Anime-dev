@@ -3,7 +3,7 @@ import { isMobile } from "./functions.js";
 // Підключення списку активних модулів
 import { flsModules } from "./modules.js";
 import axios from "axios";
-// import fs from "fs";
+
 
 
 
@@ -135,6 +135,292 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+
+
+
+// =========================================================================================================
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const registerForm = document.getElementById('registerForm');
+
+  if (registerForm) {
+    registerForm.addEventListener('submit', async (event) => {
+      event.preventDefault(); // Prevent default form submission
+
+      // Gather form data
+      const username = document.getElementById('username').value;
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      // Create request payload
+      const data = {
+        username,
+        name,
+        email,
+        password
+      };
+
+      try {
+        // Send POST request to add a new user
+        const response = await axios.post(`${apiUrl}/users`, data, {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+
+        alert(response.data.message); // Show success message
+      } catch (error) {
+        console.error('Error registering user:', error);
+        alert('Failed to register user. Please try again.');
+      }
+    });
+  }
+});
+
+
+
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const loginForm = document.getElementById('loginForm');
+
+//   if (loginForm) {
+//       loginForm.addEventListener('submit', async (event) => {
+//           event.preventDefault();
+
+//           const email = document.getElementById('loginEmail').value;
+//           const password = document.getElementById('loginPassword').value;
+
+//           const data = {
+//               email,
+//               password
+//           };
+
+//           try {
+//               const response = await axios.post(`${apiUrl}/users`, data, {
+//                   headers: {
+//                       'Content-Type': 'application/json',
+//                   },
+//               });
+
+//               const result = response.data;
+//               if (result.length > 0) {
+//                   // Сохраняем данные пользователя в локальном хранилище
+//                   const userData = result[0]; // Предполагается, что результат содержит информацию о пользователе
+//                   localStorage.setItem('userData', JSON.stringify(userData));
+                  
+//                   alert('Login successful!');
+//                   // window.location.href = 'user.html';
+//               } else {
+//                   alert('Invalid email or password');
+//               }
+//           } catch (error) {
+//               console.error('Error during login:', error);
+//               alert('Login failed. Please try again.');
+//           }
+//       });
+//   }
+// });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const loginForm = document.getElementById('loginForm');
+
+  if (loginForm) {
+    loginForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+
+      const data = {
+        email,
+        password
+      };
+
+      try {
+        const loginResponse = await axios.post(`${apiUrl}/users`, data, {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+
+        const userId = loginResponse.data[0].id;
+
+        // Теперь, когда у нас есть ID пользователя, отправляем запрос для получения полной информации о пользователе
+        const userResponse = await axios.get(`${apiUrl}/users/${userId}`);
+
+        const userData = userResponse.data;
+        if (userData.length > 0) {
+          // Сохраняем данные пользователя в локальном хранилище
+          localStorage.setItem('userData', JSON.stringify(userData[0]));
+          
+          alert('Login successful!');
+          window.location.href = 'user.html';
+        } else {
+          alert('Invalid email or password');
+        }
+      } catch (error) {
+        console.error('Error during login:', error);
+        alert('Login failed. Please try again.');
+      }
+    });
+  }
+});
+
+
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   // Получаем доступ к элементам инпутов
+//   const userEmailInput = document.getElementById('userEmail');
+//   const userNicknameInput = document.getElementById('userNickname');
+//   const userNameInput = document.getElementById('userName');
+
+//   // Получаем данные пользователя из локального хранилища
+//   const userData = JSON.parse(localStorage.getItem('userData'));
+
+//   // Проверяем, есть ли данные пользователя в локальном хранилище
+//   if (userData) {
+//     // Заполняем значения инпутов данными пользователя
+//     userEmailInput.value = userData.email;
+//     userNicknameInput.value = userData.username;
+//     userNameInput.value = userData.name;
+//   } else {
+//     // Если данные о пользователе отсутствуют в локальном хранилище, можно выполнить какие-то дополнительные действия,
+//     // например, перенаправить пользователя на страницу входа.
+//     // В данном примере я просто выведу сообщение об ошибке в консоль.
+//     console.error('User data not found in local storage');
+//   }
+
+//   // Здесь можно добавить код для обработки сохранения изменений, если это необходимо
+//   const saveButton = document.getElementById('saveButton');
+//   if (saveButton) {
+//     saveButton.addEventListener('click', () => {
+//       // В этом месте можно добавить логику сохранения изменений, если это необходимо
+//       // Например, можно отправить измененные данные на сервер для обновления информации о пользователе
+//       // После успешного обновления данных можно вывести сообщение об успешном сохранении
+//       alert('Changes saved successfully!');
+//     });
+//   }
+// });
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const userEmailInput = document.getElementById('userEmail');
+  const userNicknameInput = document.getElementById('userNickname');
+  const userNameInput = document.getElementById('userName');
+  const userPasswordInput = document.getElementById('userPassword');
+  const saveButton = document.getElementById('saveButton');
+  const deleteButton = document.getElementById('deleteButton');
+
+  const userData = JSON.parse(localStorage.getItem('userData'));
+
+  if (userData) {
+    userEmailInput.value = userData.email;
+    userNicknameInput.value = userData.username;
+    userNameInput.value = userData.name;
+    userPasswordInput.value = userData.password;
+  } else {
+    console.error('User data not found in local storage');
+  }
+
+  if (saveButton) {
+    saveButton.addEventListener('click', async () => {
+      const userId = userData.id;
+      const updatedEmail = userEmailInput.value;
+      const updatedNickname = userNicknameInput.value;
+      const updatedName = userNameInput.value;
+      const updatedPassword = userPasswordInput.value;
+
+      if (updatedEmail && updatedNickname && updatedName && updatedPassword && userId) {
+        const updatedUserData = {
+          id: userId,
+          email: updatedEmail,
+          username: updatedNickname,
+          name: updatedName,
+          password: updatedPassword
+        };
+
+        try {
+          const response = await axios.put(`${apiUrl}/users/${userId}`, updatedUserData, {
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          });
+
+          const updatedUserDataFromServer = response.data;
+          localStorage.setItem('userData', JSON.stringify(updatedUserDataFromServer));
+          alert('User data updated successfully!');
+        } catch (error) {
+          console.error('Error updating user data:', error);
+          alert('Failed to update user data. Please try again.');
+        }
+      } else {
+        alert('Please fill in all required fields.');
+      }
+    });
+  }
+
+  if (deleteButton) {
+    deleteButton.addEventListener('click', async () => {
+      const userId = userData.id;
+
+      if (userId) {
+        try {
+          await axios.delete(`${apiUrl}/users/${userId}`);
+          alert('User deleted successfully!');
+          localStorage.removeItem('userData');
+          window.location.href = '/login'; // Перенаправление на страницу входа после удаления аккаунта
+        } catch (error) {
+          console.error('Error deleting user:', error);
+          alert('Failed to delete user. Please try again.');
+        }
+      } else {
+        console.error('User ID not found in local storage');
+        alert('User ID not found. Please log in again.');
+      }
+    });
+  }
+});
+
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const deleteButton = document.getElementById('deleteButton');
+
+//   if (deleteButton) {
+//     deleteButton.addEventListener('click', async () => {
+//       // Получаем ID пользователя из локального хранилища
+//       const userId = localStorage.getItem('userData') ? JSON.parse(localStorage.getItem('userData')).id : null;
+
+//       if (userId) {
+//         try {
+//           // Отправляем запрос на удаление пользователя по его ID
+//           const response = await axios.delete(`${apiUrl}/users/${userId}`);
+//           alert('User deleted successfully!');
+//           // Удаляем данные пользователя из локального хранилища
+//           localStorage.removeItem('userData');
+//           // Можно также выполнить перенаправление на другую страницу или выполнить другие действия
+//         } catch (error) {
+//           console.error('Error deleting user:', error);
+//           alert('Failed to delete user. Please try again.');
+//         }
+//       } else {
+//         console.error('User ID not found in local storage');
+//         alert('User ID not found. Please log in again.');
+//         // Можно выполнить перенаправление на страницу входа или выполнить другие действия
+//       }
+//     });
+//   }
+// });
+
+
+
+
+
+
 
 
 
