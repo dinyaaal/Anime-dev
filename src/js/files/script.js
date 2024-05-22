@@ -44,36 +44,30 @@ const saveButton = document.querySelector('.add-anime__save');
 document.addEventListener('DOMContentLoaded', () => {
   if(saveButton){
 
-    // Добавляем обработчик события на кнопку "Save"
     saveButton.addEventListener('click', async () => {
       const animeName = document.querySelector('.input-box:nth-child(1) .input').value;
       const animeGenre = document.querySelector('.input-box:nth-child(2) .input').value;
       const animeRating = document.getElementById('input-rating').value;
   
-      // Получаем выбранное изображение
       const imageInput = document.getElementById('add-anime-image');
-      const imageFile = imageInput.files[0]; // Первый файл изображения, если выбрано несколько файлов
+      const imageFile = imageInput.files[0]; 
       if (!imageFile) {
         alert('Please select an image');
         return;
       }
   
-      // Создаем объект FormData
       const formData = new FormData();
       
-      // Добавляем данные JSON в FormData
       const jsonData = {
         name: animeName,
         genre: animeGenre,
         rating: animeRating
       };
       
-      // Добавляем файл изображения в FormData
       formData.append('file', imageFile);
       formData.append('data', JSON.stringify(jsonData));
       console.log(formData);
       try {
-        // Отправляем данные на сервер
         await axios.post(`${apiUrl}/animes`, formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
@@ -183,48 +177,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// document.addEventListener('DOMContentLoaded', () => {
-//   const loginForm = document.getElementById('loginForm');
-
-//   if (loginForm) {
-//       loginForm.addEventListener('submit', async (event) => {
-//           event.preventDefault();
-
-//           const email = document.getElementById('loginEmail').value;
-//           const password = document.getElementById('loginPassword').value;
-
-//           const data = {
-//               email,
-//               password
-//           };
-
-//           try {
-//               const response = await axios.post(`${apiUrl}/users`, data, {
-//                   headers: {
-//                       'Content-Type': 'application/json',
-//                   },
-//               });
-
-//               const result = response.data;
-//               if (result.length > 0) {
-//                   // Сохраняем данные пользователя в локальном хранилище
-//                   const userData = result[0]; // Предполагается, что результат содержит информацию о пользователе
-//                   localStorage.setItem('userData', JSON.stringify(userData));
-                  
-//                   alert('Login successful!');
-//                   // window.location.href = 'user.html';
-//               } else {
-//                   alert('Invalid email or password');
-//               }
-//           } catch (error) {
-//               console.error('Error during login:', error);
-//               alert('Login failed. Please try again.');
-//           }
-//       });
-//   }
-// });
-
-
 document.addEventListener('DOMContentLoaded', () => {
   const loginForm = document.getElementById('loginForm');
 
@@ -272,39 +224,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// document.addEventListener('DOMContentLoaded', () => {
-//   // Получаем доступ к элементам инпутов
-//   const userEmailInput = document.getElementById('userEmail');
-//   const userNicknameInput = document.getElementById('userNickname');
-//   const userNameInput = document.getElementById('userName');
-
-//   // Получаем данные пользователя из локального хранилища
-//   const userData = JSON.parse(localStorage.getItem('userData'));
-
-//   // Проверяем, есть ли данные пользователя в локальном хранилище
-//   if (userData) {
-//     // Заполняем значения инпутов данными пользователя
-//     userEmailInput.value = userData.email;
-//     userNicknameInput.value = userData.username;
-//     userNameInput.value = userData.name;
-//   } else {
-//     // Если данные о пользователе отсутствуют в локальном хранилище, можно выполнить какие-то дополнительные действия,
-//     // например, перенаправить пользователя на страницу входа.
-//     // В данном примере я просто выведу сообщение об ошибке в консоль.
-//     console.error('User data not found in local storage');
-//   }
-
-//   // Здесь можно добавить код для обработки сохранения изменений, если это необходимо
-//   const saveButton = document.getElementById('saveButton');
-//   if (saveButton) {
-//     saveButton.addEventListener('click', () => {
-//       // В этом месте можно добавить логику сохранения изменений, если это необходимо
-//       // Например, можно отправить измененные данные на сервер для обновления информации о пользователе
-//       // После успешного обновления данных можно вывести сообщение об успешном сохранении
-//       alert('Changes saved successfully!');
-//     });
-//   }
-// });
 
 
 
@@ -387,34 +306,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// document.addEventListener('DOMContentLoaded', () => {
-//   const deleteButton = document.getElementById('deleteButton');
-
-//   if (deleteButton) {
-//     deleteButton.addEventListener('click', async () => {
-//       // Получаем ID пользователя из локального хранилища
-//       const userId = localStorage.getItem('userData') ? JSON.parse(localStorage.getItem('userData')).id : null;
-
-//       if (userId) {
-//         try {
-//           // Отправляем запрос на удаление пользователя по его ID
-//           const response = await axios.delete(`${apiUrl}/users/${userId}`);
-//           alert('User deleted successfully!');
-//           // Удаляем данные пользователя из локального хранилища
-//           localStorage.removeItem('userData');
-//           // Можно также выполнить перенаправление на другую страницу или выполнить другие действия
-//         } catch (error) {
-//           console.error('Error deleting user:', error);
-//           alert('Failed to delete user. Please try again.');
-//         }
-//       } else {
-//         console.error('User ID not found in local storage');
-//         alert('User ID not found. Please log in again.');
-//         // Можно выполнить перенаправление на страницу входа или выполнить другие действия
-//       }
-//     });
-//   }
-// });
 
 
 
