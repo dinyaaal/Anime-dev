@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('html/_head.htm',{
+	"title":"HomePage"
+	})
+	<body>
+		<div class="wrapper">
+			@@include('html/_header.htm',{})
+			<main class="page-add-anime">
+				<section class="add-anime">
+					<div class="add-anime__container">
+						<div class="add-anime__body body-add-anime">
+							<div class="body-add-anime__top">
+								<div class="body-add-anime__image-wrapper">
+									<label class="body-add-anime__image">
+										<!-- <img src="@img/anime/01.jpg" alt="Image"> -->
+										<input autocomplete="off" id="add-anime-image" type="file" class="add-anime__image-input">
+									</label>
+									<label for="add-anime-image" class="button">Change photo</label>
+								</div>
+								
+							</div>
+							<div class="body-add-anime__content">
+								<div class="body-add-anime__block">
+
+									<div class="input-box">
+										<p>Anime name</p>
+										<input type="text" placeholder='Anime name' class="input">
+									</div>
+									<div class="input-box">
+										<p>Anime genre</p>
+										<input type="text" placeholder='Anime genre' class="input">
+									</div>
+								</div>
+								<div class="body-add-anime__block">
+
+									<div class="input-box">
+										<p>Anime rating</p>
+										<input type="number" placeholder="Anime rating (0-10)" id="input-rating" class="input" min="0" max="10" step="0.1">
+
+									</div>
+									
+								</div>
+								
+							</div>
+							<button type="submit" class="add-anime__save button">Save</button>
+						</div>
+						
+						
+					</div>
+				</section>
+				
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>

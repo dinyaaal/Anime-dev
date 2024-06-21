@@ -10,7 +10,7 @@
 				<section class="user-page">
 					<div class="user-page__container">
 						<div class="user-page__body body-user-page">
-							<div class="body-user-page__top">
+							<!-- <div class="body-user-page__top">
 								<div class="body-user-page__image-wrapper">
 									<label class="body-user-page__image">
 										<img src="@img/anime/01.jpg" alt="Image">
@@ -19,43 +19,31 @@
 									<label for="user-page-image" class="button">Change photo</label>
 								</div>
 								
-							</div>
+							</div> -->
 							<div class="body-user-page__content">
 								<div class="body-user-page__block">
-
+									<div class="input-box">
+										<p>Email</p>
+										<input type="email" id="userEmail" placeholder='Email' class="input">
+									</div>
 									<div class="input-box">
 										<p>Nickname</p>
-										<input type="text" placeholder='Nickname' class="input">
+										<input type="text" id="userNickname" placeholder='Nickname' class="input">
 									</div>
 									<div class="input-box">
 										<p>Name</p>
-										<input type="text" placeholder='Name' class="input">
-									</div>
-								</div>
-								<div class="body-user-page__block">
-									<div class="input-box">
-										<p>Location</p>
-										<input type="text" placeholder='Location' class="input">
+										<input type="text" id="userName" placeholder='Name' class="input">
 									</div>
 									<div class="input-box">
-										<p>Sex</p>
-										<input type="text" placeholder='Sex' class="input">
+										<p>Password</p>
+										<input type="password" id="userPassword" placeholder='Password' class="input">
 									</div>
 								</div>
-								<div class="input-box">
-									<p>About me</p>
-									<textarea placeholder='About me' class="input"></textarea>
-								</div>
-								<div class="body-user-page__block">
-									<div class="input-box">
-										<p>Website</p>
-										<input type="text" placeholder='Website' class="input">
-									</div>
-									
-								</div>
-								
-								
+								<div class="body-user-page__actions">
+									<button id="saveButton" class="body-user-page__save button">Save</button>
+									<button id="deleteButton" class="body-user-page__delete button">Delete account</button>
 
+								</div>
 							</div>
 							
 						</div>
@@ -63,7 +51,7 @@
 						
 					</div>
 				</section>
-				<section class="user-anime">
+				<!-- <section class="user-anime">
 					<div class="user-anime__container">
 						<div class="user-anime__body">
 							<ul class="user-anime-list">
@@ -101,7 +89,7 @@
 						</div>
 						<a href="#" data-popup="#popup-grade" class="grade button">Grade</a>
 					</div>
-				</section>
+				</section> -->
 			</main>
 			@@include('html/_footer.htm',{})
 		</div>
